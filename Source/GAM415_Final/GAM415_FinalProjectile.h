@@ -22,9 +22,33 @@ class AGAM415_FinalProjectile : public AActor
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
 
+	// sets up the ball mesh
+	UPROPERTY(EditAnywhere)
+	UStaticMeshComponent* ballMesh;
+
+	// sets up the base material for the ball mesh so we can change the colors of the decal on hit
+	UPROPERTY(EditAnywhere)
+	UMaterial* baseMat;
+
+	// randomizes color parameters
+	UPROPERTY()
+	FLinearColor randColor;
+
+	// sets up the projectile material so it will change colors with the decal
+	UPROPERTY(EditAnywhere)
+	UMaterialInterface* projMat;
+
+	UPROPERTY()
+	UMaterialInstanceDynamic* dmiMat;
+
+
 public:
 	AGAM415_FinalProjectile();
 
+protected:
+	virtual void BeginPlay();
+
+public:
 	/** called when projectile hits something */
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
