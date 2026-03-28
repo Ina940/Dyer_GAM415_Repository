@@ -8,6 +8,7 @@
 
 class USphereComponent;
 class UProjectileMovementComponent;
+class UNiagaraSystem;
 
 UCLASS(config=Game)
 class AGAM415_FinalProjectile : public AActor
@@ -40,6 +41,10 @@ class AGAM415_FinalProjectile : public AActor
 
 	UPROPERTY()
 	UMaterialInstanceDynamic* dmiMat;
+
+	// variable that allows us to set the niagara particle color
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* colorP;
 
 
 public:
