@@ -74,7 +74,6 @@ void AGAM415_FinalProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherA
 			ballMesh->DestroyComponent();
 			CollisionComp->BodyInstance.SetCollisionProfileName("NoCollision");
 		}
-
 		float frameNum = UKismetMathLibrary::RandomFloatInRange(0.f, 3.f);
 
 		auto Decal = UGameplayStatics::SpawnDecalAtLocation(GetWorld(), baseMat, FVector(UKismetMathLibrary::RandomFloatInRange(20.f, 40.f)), Hit.Location, Hit.Normal.Rotation(), 0.f);
