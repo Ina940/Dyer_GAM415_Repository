@@ -43,7 +43,11 @@ public:
 	float radius;
 
 	UPROPERTY(EditAnywhere)
+<<<<<<< HEAD
 	float Depth;
+=======
+	FVector Depth;
+>>>>>>> 261c68fb8c5e6a71ad121c5425e10435c5bd90d9
 
 protected:
 	// Called when the game starts or when spawned
@@ -63,7 +67,11 @@ private:
 	UProceduralMeshComponent* ProcMesh;
 	TArray<FVector> Vertices;
 	TArray<int> Triangles;
+<<<<<<< HEAD
 	TArray<FVector2D> UV0;  // Changed from FVector to FVector2D
+=======
+	TArray<FVector> UV0;
+>>>>>>> 261c68fb8c5e6a71ad121c5425e10435c5bd90d9
 	TArray<FVector> Normals;
 	TArray<FColor> UpVertexColors;
 

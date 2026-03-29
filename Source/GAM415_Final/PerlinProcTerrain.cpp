@@ -22,6 +22,7 @@ void APerlinProcTerrain::BeginPlay()
 	
 	CreateVertices();
 	CreateTriangles();
+<<<<<<< HEAD
 
 	// Initialize Normals array - calculate or leave empty
 	Normals.Empty();
@@ -29,6 +30,8 @@ void APerlinProcTerrain::BeginPlay()
 	// Initialize UpVertexColors array - can be empty or populate with colors
 	UpVertexColors.Empty();
 
+=======
+>>>>>>> 261c68fb8c5e6a71ad121c5425e10435c5bd90d9
 	ProcMesh->CreateMeshSection(sectionID, Vertices, Triangles, Normals, UV0, UpVertexColors, TArray<FProcMeshTangent>(), true);
 	ProcMesh->SetMaterial(0, Mat);
 
