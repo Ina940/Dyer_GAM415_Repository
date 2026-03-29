@@ -3,7 +3,7 @@
 
 #include "PerlinProcTerrain.h"
 #include "ProceduralMeshComponent.h"
-#include "KismetProceduralMeshLibrary.h"
+#include "KismetProceduralMeshLibrary.h" 
 
 // Sets default values
 APerlinProcTerrain::APerlinProcTerrain()
@@ -22,7 +22,6 @@ void APerlinProcTerrain::BeginPlay()
 	
 	CreateVertices();
 	CreateTriangles();
-<<<<<<< HEAD
 
 	// Initialize Normals array - calculate or leave empty
 	Normals.Empty();
@@ -30,8 +29,6 @@ void APerlinProcTerrain::BeginPlay()
 	// Initialize UpVertexColors array - can be empty or populate with colors
 	UpVertexColors.Empty();
 
-=======
->>>>>>> 261c68fb8c5e6a71ad121c5425e10435c5bd90d9
 	ProcMesh->CreateMeshSection(sectionID, Vertices, Triangles, Normals, UV0, UpVertexColors, TArray<FProcMeshTangent>(), true);
 	ProcMesh->SetMaterial(0, Mat);
 
@@ -44,6 +41,7 @@ void APerlinProcTerrain::Tick(float DeltaTime)
 
 }
 
+// AlterMesh set up to determine size of mesh and whether or not it can be altered at the impact point
 void APerlinProcTerrain::AlterMesh(FVector impactPoint)
 {
 	// checks number of total vertices on mesh
@@ -58,6 +56,7 @@ void APerlinProcTerrain::AlterMesh(FVector impactPoint)
 		}
 	}
 }
+
 
 void APerlinProcTerrain::CreateVertices()
 {

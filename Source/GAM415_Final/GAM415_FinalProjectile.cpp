@@ -8,7 +8,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
-#include "PerlinProcTerrain.h"
+#include "PerlinProcTerrain.h" 
 
 AGAM415_FinalProjectile::AGAM415_FinalProjectile() 
 {
@@ -93,4 +93,4 @@ void AGAM415_FinalProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherA
 		}
 
 	}
-}
+} 
