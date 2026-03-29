@@ -8,6 +8,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
+#include "PerlinProcTerrain.h"
 
 AGAM415_FinalProjectile::AGAM415_FinalProjectile() 
 {
@@ -81,6 +82,15 @@ void AGAM415_FinalProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherA
 
 		MatInstance->SetVectorParameterValue("Color", randColor);
 		MatInstance->SetScalarParameterValue("Frame", frameNum);
+
+		APerlinProcTerrain* procTerrain = Cast<APerlinProcTerrain>(OtherActor);
+
+		// checks to see if our projectile hit anything
+		if (procTerrain)
+		{
+			// if it hits, it alters the terrain
+			procTerrain->AlterMesh(Hit.ImpactPoint);
+		}
 
 	}
 }
