@@ -6,9 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Engine/TextureRenderTarget2D.h"
 #include "Components/BoxComponent.h"
-#include "Components/SceneCaptureComponent2D.h"
+#include "Components/SceneCaptureComponent2D.h" 
 #include "GAM415_FinalCharacter.h"
-#include "Components/ArrowComponent.h"
+#include "Components/ArrowComponent.h" 
 #include "Portal.generated.h"
 
 // lets us access player character
@@ -37,6 +37,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USceneCaptureComponent2D* sceneCapture;
 
+
 	UPROPERTY(EditAnywhere)
 	UArrowComponent* rootArrow;
 
@@ -47,7 +48,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	UBoxComponent* boxComp;
 
-	// allows us to sec which portal are connected
+	// allows us to set which portal are connected
 	UPROPERTY(EditAnywhere)
 	APortal* OtherPortal;
 
@@ -55,7 +56,7 @@ public:
 	UMaterialInterface* mat;
 
 	// creates overlap event to allow for teleporting
-	UFUNCTION()
+	UFUNCTION() 
 	void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UFUNCTION()
@@ -64,4 +65,4 @@ public:
 	UFUNCTION()
 	void UpdatePortals();
 
-};
+}; 
